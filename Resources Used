@@ -1,0 +1,13 @@
+Used this image as the main source of generating proper colors for the app
+
+https://dribbble.com/shots/15337214-Quiz-Mobile-app-I-Ofspace
+
+Used he library to decode html entities
+
+-- some responses from the api were like this
+In the &quot;Call Of Duty: Zombies&quot; map &quot;Origins&quot;, how many numbered power generators are there?
+
+-- In order to decode this we can use he library for more complex entites, or else use innerHTML for easy going.
+--Used this website for emojis
+
+https://emojikeyboard.io/

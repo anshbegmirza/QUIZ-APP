@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mona+Sans:ital,wght@0,200..900;1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="src/imgs/ThinkFast.jpeg">
+    <link rel="stylesheet" href="src/style/styles.css">
+    <script type="module" src="src/js/controller.js"></script>
+
+    <!-- <script type="module" src="src/js/script.js"></script> -->
+
+    <title>JS-7 Think Fast</title>
+</head>
+
+<body>
+    <div class="grid-overlay">
+        <div class="light-grey-overlay"></div>
+        <img src="src/imgs/blue-bg.jpg" class="background-Img" alt="">
+    </div>
+
+    <!-- Selecting Quiz level and Category (Screen-1) -->
+    <div class="container" id="screen1">
+        <h1 class="container-title">Welcome To, Think Fast </h1>
+        <p class="container-desp">"Think Fast: Test your knowledge and pick the perfect quiz options to begin !"</p>
+
+        <hr class="container-seperator">
+
+        <form action="" class="container-quizAPI">
+
+            <label for="question-Number" class="container-quizAPI--label">Select Number of Questions :</label>
+            <input id="questionNumber" type="number" class="container-quizAPI--input" name="question-Number" min="5"
+                max="30" value="5">
+
+            <br>
+
+            <label for="question-Category" class="container-quizAPI--label">Select Category:</label>
+            <select id="questionCategory" name="question-Category" class="container-quizAPI--input" id="">
+                <option value="any">Any Category</option>
+                <option value="9">General Knowledge</option>
+                <option value="10">Entertainment: Books</option>
+                <option value="11">Entertainment: Film</option>
+                <option value="12">Entertainment: Music</option>
+                <option value="13">Entertainment: Musical & Theatres</option>
+                <option value="14">Entertainment: Television</option>
+                <option value="15">Entertainment: Video Games</option>
+                <option value="16">Entertainment: Board Games</option>
+                <option value="17">Science & Nature</option>
+                <option value="18">Science: Computers</option>
+                <option value="19">Science: Mathematics</option>
+                <option value="20">Mythology</option>
+                <option value="21">Sports</option>
+                <option value="22">Geography</option>
+                <option value="23">History</option>
+                <option value="24">Politics</option>
+                <option value="25">Art</option>
+                <option value="26">Celebrities</option>
+                <option value="27">Animals</option>
+                <option value="28">Vehicles</option>
+                <option value="29">Entertainment: Comics</option>
+                <option value="30">Science: Gadgets</option>
+                <option value="31">Entertainment: Japanese Anime & Manga</option>
+                <option value="32">Entertainment: Cartoon & Animations</option>
+            </select>
+
+            <br>
+            <label for="question-Difficulty" class="container-quizAPI--label">Select Difficulty:</label>
+            <select id="questionDifficulty" name="question-Difficulty" class="container-quizAPI--input" id="">
+
+                <option value="any">Any Difficulty</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+
+            </select>
+
+            <br>
+            <label for="question-Type" class="container-quizAPI--label">Select Question Type:</label>
+            <select id="questionType" name="question-Type" class="container-quizAPI--input" id="">
+                <option value="any">Any Type</option>
+                <option value="multiple">MCQ</option>
+                <option value="boolean">True / False</option>
+            </select>
+        </form>
+        <!-- <hr class="container-seperator"> -->
+
+        <button id="startQuizBtn" type="submit" class="container-btn start-quiz">Start Quiz</button>
+
+    </div>
+
+    <!-- Screen 2 Questions and their options -->
+    <div id="screen2" class="container container-Question hidden">
+        <h1>Think Fast</h1>
+        <p class="container-desp">Think Fast: Quick questions, fast answers, endless fun!</p>
+        <hr class="container-seperator">
+        <h2 class="question-text">Q1. Which is the largest animal ?</h2>
+        <div class="options">
+            <button class=" container-btn optionBtn option-Correct">
+                Whale
+            </button>
+            <button class=" container-btn optionBtn option-Wrong">
+                Lion
+            </button>
+            <button class=" container-btn optionBtn">
+                Elephant
+            </button>
+            <button class=" container-btn optionBtn">
+                Dolphin
+            </button>
+        </div>
+        <hr class="container-seperator">
+
+        <div class="quiz-status">
+            <button class="container-btn quit-btn" id="exitBtn">Exit</button>
+            <button class="container-btn score-btn" id="scoreBtn">Score: 1 / 5</button>
+            <button id="nextQuestionBtn" class="container-btn">Next</button>
+        </div>
+
+    </div>
+
+    <!-- Screen 3 Score -->
+    <div id="screen3" class="container hidden ">
+        <h1>Think Fast</h1>
+        <p class="container-desp">Think Fast: Quick questions, fast answers, endless fun!</p>
+        <hr class="container-seperator">
+        <h4 class="total-score">Your Total Score : 3 ⭐ </h4>
+        <p class="end-msg">Thank You for Playing !</p>
+        <hr class="container-seperator">
+
+        <button class="container-btn animated-btn" id="playAgain-btn">Play Again</button>
+    </div>
+
+    <!-- Delete model -->
+    <!-- <div class="delete-model hidden">
+        <p class="delete-request">Do you really want to quit ? </p>
+        <img src="src/imgs/trash_Can.png" class="delete-img" alt="">
+        <button class="close-popup-btn">
+            <img src="src/imgs/close-icon.svg" alt="">
+        </button>
+        <div class="buttons-box"><button class="yes-delete">Yes, Quit</button>
+            <button class="cancel-btn">Keep Playing</button>
+        </div>
+    </div> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

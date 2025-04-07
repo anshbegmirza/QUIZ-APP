@@ -1,0 +1,32 @@
+{
+  "name": "js-7-anshbegmirza",
+  "version": "1.0.0",
+  "description": "simple quiz app uisng html css and js (fetching data from api).",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Softrefine-Internship/js-7-anshbegmirza.git"
+  },
+  "author": "anshbegmirza",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.13.2",
+    "parcel": "^2.13.2",
+    "sass": "^1.82.0",
+    "svgo": "^3.3.2"
+  },
+  "dependencies": {
+    "core-js": "^3.39.0",
+    "fractional": "^1.0.0",
+    "he": "^1.2.0",
+    "regenerator-runtime": "^0.14.1"
+  },
+  "bugs": {
+    "url": "https://github.com/Softrefine-Internship/js-7-anshbegmirza/issues"
+  },
+  "homepage": "https://github.com/Softrefine-Internship/js-7-anshbegmirza#readme"
+}

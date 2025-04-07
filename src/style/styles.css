@@ -1,0 +1,528 @@
+/* write css here */
+:root {
+  /* --primary-color-container: #3ea6ff; */
+  --primary-color-container: #353A3F;
+  /* --secondary-color-container: #64b2ff; */
+  --secondary-color-container: #44494C;
+  --border: #ffc10779;
+
+
+  --white: #fff;
+  --black: #0c0c0c;
+  --correct-option: #2CAE5F;
+  --wrong-option: #f54646;
+
+  --wrong-option-hover: #e92222;
+
+  --shadow-black: #111;
+  --shadow-hover: #333;
+
+
+  --cancel-btn: #5085E9;
+  --cancel-btn-hover: #1e65e9;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.html {
+  font-size: 62.5%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Mona sans', Times New Roman;
+  background: linear-gradient(90deg, rgba(33, 35, 62, 1) 0%, rgba(39, 43, 80, 1) 100%);
+  color: #fff;
+  position: relative;
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Backdrop Grid */
+/* Grid styles */
+/* 
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  pointer-events: none;
+  
+  z-index: -200;
+  background-image:
+    radial-gradient(rgb(255, 255, 255) 1px, transparent 4px),
+    linear-gradient(to right, #383E6E 1px, transparent 1px),
+    linear-gradient(to bottom, #383E6E 1px, transparent 1px);
+  background-size: 40px 40px, 40px 40px, 40px 40px;
+  background-position: 0 0, 20px 20px, 20px 20px;
+
+  animation: grid-movement 5s infinite alternate ease-in-out both;
+} */
+.grid-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -999;
+  height: 100vh;
+  width: 100vw;
+}
+
+.background-Img {
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  height: 100vh;
+  width: 100vw;
+}
+
+.light-grey-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -998;
+
+  height: 100vh;
+  width: 100vw;
+  /* filter: blur(1rem); */
+  background: linear-gradient(90deg, #2e2e2e4b 0%, #252525c5 100%);
+}
+
+.container {
+  /* margin: 2rem 3rem; */
+  padding: .5rem;
+  background: linear-gradient();
+  text-align: center;
+  width: 80%;
+
+  background: linear-gradient(180deg, var(--primary-color-container) 0%, var(--secondary-color-container) 100%);
+  border-radius: 2rem;
+  border: 3px solid var(--border);
+  box-shadow: 1.5rem 1.5rem 2rem rgb(0, 0, 0, .3);
+}
+
+.container-title {
+  margin-bottom: .5rem;
+  margin-top: .5rem;
+}
+
+.container-desp {
+  font-size: 1.2rem;
+  margin-bottom: .5rem;
+}
+
+.container-seperator {
+  border: none;
+  height: .2rem;
+  background-color: var(--white);
+  margin: 1rem 2rem;
+  border-radius: 1rem;
+}
+
+.container-quizAPI {
+  text-align: left;
+  margin: 1rem 2rem;
+}
+
+.container-quizAPI--label {
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.container-quizAPI--input {
+  display: block;
+  font-size: 1rem;
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid rgb(0, 0, 0, 0.9);
+  padding: .25rem 1rem;
+  border-radius: .5rem;
+}
+
+/* .question-text {
+  max-width: 80%;
+  text-align: center;
+  outline: 1px solid lime;
+} */
+
+.container-desp {
+  font-weight: 500;
+}
+
+.start-quiz {
+  animation: pulse 1.5s infinite;
+}
+
+.container-btn {
+  display: inline-block;
+  margin: 1rem 0;
+  width: 8rem;
+  height: 3rem;
+  border: 2px solid transparent;
+  border-radius: .5rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all .3s;
+  /* box-shadow: 0.3rem 0.3rem 2rem rgb(0, 0, 0, 0.); */
+  /* font-weight: bold; */
+}
+
+.container-btn:hover {
+  border: 2px solid var(--black);
+}
+
+
+/* Options Style */
+
+
+.options {
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  width: 100%;
+  column-gap: 2rem;
+  margin: 1rem auto;
+  /* outline: 1px solid lime; */
+}
+
+.optionBtn {
+  width: auto;
+}
+
+/* 
+.optionBtn:hover {
+  background-color: #eeeeee;
+} */
+
+.option-Correct {
+  background-color: var(--correct-option);
+  /* border: 2px solid rgb(13, 175, 13); */
+}
+
+.option-Wrong {
+  background-color: var(--wrong-option);
+  /* border: 2px solid #af0d50; */
+}
+
+.optionBtn:disabled {
+  opacity: 1 !important;
+  cursor: not-allowed;
+}
+
+/* .option-Disabled {
+  cursor: not-allowed;
+} */
+
+.quit-btn {
+  background-color: var(--wrong-option);
+}
+
+.quiz-status {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  /* outline: 1px solid lime; */
+}
+
+.score-btn {
+  cursor: default;
+  padding: .5rem 1rem;
+  width: 11rem;
+  border: 1px solid black;
+}
+
+.score-btn:hover {
+  border: 1px solid black;
+}
+
+
+/* Screen 3 */
+.total-score {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.end-msg {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.animated-btn {
+  animation: pulse 1.5s infinite;
+}
+
+/* Delete model goes here */
+.overlay {
+  height: 1000rem;
+  width: 1000rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2rem);
+  position: fixed;
+  z-index: 1000;
+}
+
+.delete-model {
+  background-color: var(--white);
+  position: fixed;
+  z-index: 1200;
+  width: 40rem;
+  max-width: 35rem;
+  padding: 2rem 2.5rem;
+  border-radius: 2rem;
+  /* outline: 1px solid red; */
+}
+
+.delete-request {
+  color: black;
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 2rem 0;
+  text-wrap: pretty;
+}
+
+.delete-img {
+  height: 15rem;
+  width: auto;
+  object-fit: cover;
+  display: block;
+  margin: 2rem auto;
+}
+
+.buttons-box {
+  /* outline: 1px solid lime; */
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  /* justify-content: space-between; */
+}
+
+.close-popup-btn {
+  border: none;
+  padding: .3rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  background-color: var(--white);
+  cursor: pointer;
+  color: var(--shadow-black);
+  transition: color 0.3s;
+}
+
+.close-popup-btn:hover {
+  color: var(--shadow-hover);
+}
+
+.close-popup-btn img {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.buttons-box button {
+  /* outline: 1px solid lime; */
+  border: none;
+  padding: 1rem 2rem;
+  color: var(--white);
+  font-size: 1.4rem;
+  cursor: pointer;
+  flex: 1;
+  transition: all .3s;
+  border-radius: .5rem;
+  /* margin-top: 3rem; */
+}
+
+.yes-delete {
+  background-color: var(--wrong-option);
+}
+
+.yes-delete:hover {
+  background-color: var(--wrong-option-hover);
+}
+
+.cancel-btn {
+  background-color: var(--cancel-btn);
+}
+
+.cancel-btn:hover {
+  background-color: var(--cancel-btn-hover);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Animation goes here */
+@keyframes pulse {
+
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes grid-movement {
+  0% {
+    transform: translateY(2%);
+  }
+
+  50% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(-2%);
+  }
+}
+
+
+
+/* Helper Classes */
+.hidden {
+  display: none;
+}
+
+/* To remove those arrows from number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Responsive Design Goes here */
+/* after 1728  */
+@media (min-width: 108em) {
+  html {
+    font-size: 100%;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .container-desp {
+    font-size: 1.6rem;
+  }
+
+  .container-quizAPI--label {
+    font-size: 1.4rem;
+  }
+
+  .container-quizAPI--input {
+    font-size: 1.4rem;
+    padding: .5rem 1.5rem;
+  }
+
+  .container-btn {
+    font-size: 1.6rem;
+  }
+
+  .optionBtn {
+    font-size: 1.8rem;
+  }
+
+  .total-score {
+    font-size: 1.8rem;
+  }
+
+  .end-msg {
+    font-size: 1.6rem;
+  }
+
+  .animated-btn {
+    padding: .5rem 1rem;
+    width: 12rem;
+  }
+}
+
+/* 554px */
+@media (max-width:36em) {
+  html {
+    font-size: 59%;
+  }
+
+  .quiz-status {
+    padding: 0 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .score-btn {
+    max-width: 10rem;
+    padding: 0;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .container-title {
+    font-size: 1.4rem;
+  }
+}
+
+/* 780px */
+@media (max-width: 48em) {
+  html {
+    font-size: 62%;
+  }
+
+  .options {
+    /* outline: 1px solid lime; */
+    grid-template-columns: auto;
+  }
+}
+
+
+/* 885px */
+@media (max-width:54em) {
+  html {
+    font-size: 66%;
+  }
+
+  .quiz-status {
+    padding: 0 0.5rem;
+    flex-wrap: wrap;
+  }
+}
+
+/* 1440px */
+@media (max-width: 90em) {
+  html {
+    font-size: 65%;
+  }
+}
+
+/* before 1728px  */
+@media (max-width: 108em) {
+  html {
+    font-size: 100%;
+  }
+}
